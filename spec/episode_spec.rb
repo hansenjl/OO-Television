@@ -33,7 +33,7 @@ describe "Episode" do
   end
 
    describe '#show=' do
-    #You will need to complete the Episode tests before tackling this one
+    #You will need to complete the Show tests before tackling this one
     it "will also add the episode to the show's array of episodes" do
       the_office = Show.new("The Office")
       stairmaggedon = Episode.new("Stairmaggedon")
@@ -41,6 +41,5 @@ describe "Episode" do
       expect(the_office.episodes).to include(stairmaggedon)
     end
   end
-
 
 end
