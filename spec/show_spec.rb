@@ -15,10 +15,6 @@ describe "Show" do
       expect { friends.name = "Not Friends" }.to raise_error
     end
 
-    it "is saved on initialization" do
-      expect(Show.all).to include(friends)
-    end
-
   end
 
 
@@ -38,36 +34,36 @@ describe "Show" do
   describe '#add_episode' do
     it "it accepts an episode as an argument and adds it to the episodes array " do
       episode = Episode.new("The One With the Cop")
-      friends.add_episodes(episode)
+      friends.add_episode(episode)
       expect(friends.episodes).to include(episode)
     end
 
     it "assigns the episode's show to be itself" do
       episode = Episode.new("The One With the Cop")
-      friends.add_episodes(episode)
+      friends.add_episode(episode)
       expect(episode.show).to eq(friends)
     end
 
     it "doesn't add the same episode twice" do
-      friends.episodes = []
+      friends.episodes.clear
       episode = Episode.new("The One With the Cop")
       other_episode = Episode.new("The One With the Yeti")
-      friends.add_episodes(episode)
-      friends.add_episodes(episode)
-      friends.add_episodes(other_episode)
+      friends.add_episode(episode)
+      friends.add_episode(episode)
+      friends.add_episode(other_episode)
       expect(friends.episodes.length).to eq(2)
     end
   end
 
     describe "#num_of_episodes" do
       it "returns the number of episodes added to the #episodes array" do
-        friends.episodes = []
+        friends.episodes.clear
         episode = Episode.new("The One With the Cop")
         other_episode = Episode.new("The One With the Yeti")
         another_episode = Episode.new("The One Where Ross Moves In")
-        friends.add_episodes(episode)
-        friends.add_episodes(other_episode)
-        friends.add_episodes(another_episode)
+        friends.add_episode(episode)
+        friends.add_episode(other_episode)
+        friends.add_episode(another_episode)
         expect(friends.num_of_episodes).to eq(3)
       end
   end

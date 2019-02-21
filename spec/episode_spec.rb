@@ -25,7 +25,7 @@ describe "Episode" do
   end
 
   describe '#show' do
-    it "can belong to a show" do
+    it "an episode can belong to a show" do
       friends = Show.new("Friends")
       ross_tan.show = friends
       expect(ross_tan.show).to be_a(Show)
@@ -34,6 +34,13 @@ describe "Episode" do
 
    describe '#show=' do
     #You will need to complete the Show tests before tackling this one
+    it "accepts an argument of a show object and set's the episode's show attribute" do
+      the_office = Show.new("The Office")
+      stairmaggedon = Episode.new("Stairmaggedon")
+      stairmaggedon.show = the_office
+      expect(stairmaggedon.show).to eq(the_office)
+    end
+
     it "will also add the episode to the show's array of episodes" do
       the_office = Show.new("The Office")
       stairmaggedon = Episode.new("Stairmaggedon")
