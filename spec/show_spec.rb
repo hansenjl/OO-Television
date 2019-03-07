@@ -39,7 +39,7 @@ describe "Show" do
     end
 
     it "assigns the episode's show to be itself" do
-      episode = Episode.new("The One With the Cop")
+      episode = Episode.new("The One With the Cop\n")
       friends.add_episode(episode)
       expect(episode.show).to eq(friends)
     end
