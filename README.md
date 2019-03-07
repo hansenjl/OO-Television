@@ -15,7 +15,7 @@ Because of the relationships between your classes, the `Episode` tests, i.e. the
 We recommend starting out by getting some of the initial `Episode` tests passing and switching to write code in the `Show` class as directed by the test output. Because of the complexity, let's walk through a guideline of how to think about the problem as you're building out the solution.
 
 
-###`Show` class
+### `Show` class
 
 The Show class will initialize with a name attribute and an empty array of episodes.
 
@@ -33,11 +33,11 @@ This method will do four things:
 #### `Show#num_of_episodes`
 This method will simply return the total number of episodes that belong to that show instance.
 
-###`Episode` class
+### `Episode` class
 
 The Episode class will initialize with a title attribute and should also be saved on initialization.
 
-####`Episode#show=(show)`
+#### `Episode#show=(show)`
 This method will do three things:
 
 1. It will accept a show object as an argument.
@@ -47,7 +47,7 @@ This method will do three things:
 3. Additionally, it should add the current episode to the show's array of episodes (if it hasn't already been added).
 
 
-###Conclusion
+### Conclusion
 
 These are just a few hints and guidelines to help you through this lab. Rely on the guides here, refer to the previous Code Along on object relations, and **read the test output and test files**. Never forget to ask a question on Learn if you are stuck. Good luck!
 
